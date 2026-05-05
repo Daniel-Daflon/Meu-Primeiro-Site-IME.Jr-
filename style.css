@@ -1,0 +1,302 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 1. Estilo geral da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0e0e0e; /* Cinza escuro */
+  color: #f0f0f0; /* Texto branco */
+  margin: 0;
+  padding: 40px 20px; /* 40px em cima/embaixo, 20px nas laterais */
+}
+
+/* 2. Transformando a tag <main> em um "cartão" branco */
+main {
+  background-color: #0e0e0e;
+  padding: 20px; /* Espaço interno para o texto não colar na borda */
+  border-radius: 12px; /* Deixa as quinas arredondadas */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Cria uma sombra suave em volta */
+  max-width: 1000px; /* A caixa não vai crescer mais do que isso */
+  margin: 0 auto; /* O "auto" nas laterais centraliza a caixa perfeitamente na tela */
+}
+
+/* ---------------------------------------------------- */
+/* BARRA DE NAVEGAÇÃO (NAVBAR) */
+/* ---------------------------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Empurra o logo para a esquerda e o menu para a direita */
+  align-items: center; /* Centraliza verticalmente */
+  
+  background-color: #1f1f1f;
+  padding: 15px 40px; /* 15px em cima/embaixo, 40px nas laterais */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombrinha para descolar do fundo */
+  
+  /* O Truque do Header Fixo */
+  position: sticky;
+  top: 0; /* Diz para colar quando chegar no pixel zero do topo da tela */
+  z-index: 1000; /* Garante que a barra fique por cima dos outros textos ao rolar a página */
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #c70000;
+}
+
+.logo-imagem {
+    border-radius: 50%; /* Deixa a imagem redonda */
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+.menu {
+  display: flex;
+  gap: 50px; /* Espaço entre os links */
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 0.75rem;
+}
+
+.menu a:hover {
+  color: #c70000;
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO DA NOVA SEÇÃO DE APRESENTAÇÃO */
+/* ---------------------------------------------------- */
+
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.apresentacao img {
+  border: 1px solid #c70000;
+  width: 900px;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+/* Criando a classe de Botão para usar em qualquer link */
+.BOTAODELEITURA {
+  display: inline-block; /* Permite colocar margin e padding no link */
+  background-color: #c70000; /* Fundo Vermelho */
+  color: rgb(255, 255, 255); /* Letra branca */
+  padding: 5px 18px; /* Espaço interno (altura x largura) */
+  text-decoration: none; /* Sem sublinhado */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s; /* Animações suaves */
+}
+
+/* Efeito ao passar o mouse no botão */
+.BOTAODELEITURA:hover {
+  background-color: #c70000; /* Escurece o fundo */
+  transform: translateY(-3px); /* Faz o botão "subir" 3 pixels! */
+}
+
+/* FORMATAÇÃO DAS OBRAS */
+.item-obra {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.CARD-OBRA {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;   
+
+}
+
+.capa-obra {
+  border: 1px solid #c70000;
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  flex-shrink: 0; /* Impede que a imagem encolha se o texto for muito grande */
+}
+
+/* 4. Cores dos títulos */
+h1, h2, h3 {
+  color: #c70000;
+}
+
+h1 {
+  margin: 0; /* Remove a margem padrão para evitar espaçamento extra */
+}
+
+h4 {
+    color: #e9ecef;
+    font-size: 1.0rem;
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO DA PÁGINA DE CADASTRO                         */
+/* ---------------------------------------------------- */
+
+/* Classe auxiliar para centralizar o formulário no meio da tela */
+.pagina-centralizada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ocupa 100% da altura da tela */
+    background-color: #0e0e0e;
+}
+
+.container-cadastro {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;/* Formulários ficam melhores se forem estreitos */
+}
+
+.titulo-conta {
+    color: #c70000;
+    margin-bottom: 20px;
+}
+.colunas {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Espaço entre as colunas */
+    justify-content: center; /* Centraliza as colunas horizontalmente */
+}
+
+.preferencias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo-cadastro {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.logo-name {
+    color: #c70000;
+    font-size: 1.3rem;
+    font-weight: bold;
+     color: #ffffff;
+}
+
+.destaque {
+    color: #c70000;
+}
+
+.form-cadastro {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2d2d2d;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espaço entre os campos */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+    
+.campo label {
+    font-size: 0.85rem;
+    color: #f0f0f0;
+    font-weight: 500;
+}
+
+/* Estilizando as caixas de entrada */
+.campo input {
+    background-color: #0e0e0e;
+    border: 1px solid #c70000;
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none; /* Tira aquela borda azul padrão do navegador */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito ao clicar no campo (Foco) */
+.campo input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px rgba(199, 0, 0, 0.4);
+}
+
+.link-login {
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------- */
+/* ESTILO PARA CHECKBOX E RADIO                         */
+/* ---------------------------------------------------- */
+
+.campo-selecao {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.campo-selecao label {
+    display: block;
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.opcoes-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #0e0e0e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #2d2d2d;
+}
+
+/* Estilizando cada linha de opção */
+.opcao-item {
+    display: flex !important; /* Força o alinhamento horizontal */
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: normal !important; /* Tira o negrito dos itens individuais */
+    font-size: 0.85rem !important;
+}
+
+/* Customizando as bolinhas e quadradinhos para vermelho */
+.opcao-item input[type="checkbox"],
+.opcao-item input[type="radio"] {
+    accent-color: #c70000; /* A cor de destaque do navegador vira vermelha */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.opcao-item:hover {
+    color: #c70000;
+    transition: color 0.2s;
+}
