@@ -89,8 +89,10 @@ main {
 
 .apresentacao img {
   border: 1px solid #c70000;
-  width: 900px;
-  height: 400px;
+  max-width:900px;
+  width: auto;
+  max-height: 400px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -299,4 +301,51 @@ h4 {
 .opcao-item:hover {
     color: #c70000;
     transition: color 0.2s;
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVIDADE (Telas menores que 768px - Celulares) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+  
+  /* 1. Ajuste do Menu (Navbar) */
+  .navbar {
+    flex-direction: column; /* Empilha a logo e os links */
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .menu {
+    flex-wrap: wrap; /* Permite que os links desçam de linha se faltar espaço */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* 2. Ajuste dos Cartões de Obras */
+  .CARD-OBRA {
+    flex-direction: column; /* Coloca a sinopse embaixo da foto */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .capa-obra {
+    width: 150px; /* Aumenta um pouco a capa já que ela ficará sozinha na linha */
+    height: 220px;
+  }
+
+  /* 3. Ajuste da Página de Cadastro */
+  .form-cadastro {
+    flex-direction: column; /* Empilha o formulário e o botão de submit */
+  }
+  
+  .colunas {
+    flex-direction: column; /* Empilha as colunas de dados e preferências */
+    gap: 20px;
+  }
+  
+  /* Faz o botão ocupar 100% da tela no celular, facilitando o clique */
+  .form-cadastro .BOTAODELEITURA {
+    width: 100%; 
+    box-sizing: border-box;
+  }
 }
